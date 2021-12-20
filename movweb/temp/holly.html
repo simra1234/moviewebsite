@@ -1,0 +1,23 @@
+{%extends 'main.html'%}
+{%block content%}
+
+<div class="container">
+    <div class="row">
+    {%for a in ab %}
+        <div class="col-md-3">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="{{a.img.url}}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">{{a.movie_name}}</h4>
+      <p class="card-text">{{a.discription|slice:":20"}}</p>
+      <p class="card-text">Rating -: {{a.rating}}/10</p>
+      <a href="mpage/{{a.id}}" class="btn btn-primary">click here</a>
+      <a href="mpage/{{a.id}}" class="btn btn-danger">delete</a>
+    </div>
+  </div>
+      {%endfor%}
+  </div>
+        </div>
+  {%endblock%}
+</body>
+</html>
